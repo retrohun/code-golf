@@ -125,8 +125,9 @@ func home(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		         WHEN 'τ'                    THEN 25
 		         WHEN 'arabic-to-roman'      THEN 26
 		         WHEN 'brainfuck'            THEN 27
-		         WHEN 'roman-to-arabic'      THEN 28
-		         WHEN 'spelling-numbers'     THEN 29
+		         WHEN 'rule-110-gen200'      THEN 28
+		         WHEN 'roman-to-arabic'      THEN 29
+		         WHEN 'spelling-numbers'     THEN 30
 		         END, row_number`,
 		userID,
 	)

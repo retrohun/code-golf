@@ -12,6 +12,7 @@ Swallowed a Fly *todo*
 Brainfuck
 Deadfish *todo*
 Quine
+Rule 110 Gen200
 
 = Math =
 

@@ -133,6 +133,24 @@ A Partridge in a Pear Tree.</blockquote>`,
 		"roman-to-arabic", "Roman to Arabic", "Slow",
 		"For each roman numeral argument print the same number in arabic numerals.</p>",
 	}, {
+		"rule-110-gen200", "Rule 110 Gen200", "Slow",
+		`Print the first <b>200</b> generations in the Rule 110 cellular automaton starting from an initial single living cell (gen. zero), which should begin like this:<pre>1
+11
+111
+1101
+11111
+110001
+1110011
+11010111
+111111101
+1100000111
+11100001101
+110100011111
+1111100110001
+11000101110011
+111001111010111
+1101011001111101</pre><p>You can read more about on it and on its Turing-Completeness here: <a href="https://en.wikipedia.org/wiki/Rule_110">https://en.wikipedia.org/wiki/Rule_110</a>.`,
+	}, {
 		"seven-segment", "Seven Segment", "Medium",
 		`Using pipes and underscores print the argument as if it were displayed on a seven segment display.<p>For example the number <b>0123456789</b> should be displayed as:<pre> _     _  _     _  _  _  _  _
 | |  | _| _||_||_ |_   ||_||_|
