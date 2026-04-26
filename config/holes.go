@@ -200,22 +200,25 @@ func initHoles() {
 		}
 	}
 
+	// Case-insensitive sort each slice.
 	for _, holes := range [][]*Hole{HoleList, ExpHoleList, AllHoleList} {
-		// Case-insensitive sort.
 		slices.SortFunc(holes, func(a, b *Hole) int {
 			return cmp.Compare(strings.ToLower(a.Name), strings.ToLower(b.Name))
 		})
 	}
 
-	// Populate after sorting so that each hole slice is sorted.
-	var latestReleased time.Time
+	// Populate various slices after sorting so that each slice is sorted.
+
+	// Populate HolesByAuthor from the all hole list.
 	for _, hole := range AllHoleList {
-		// Populate HolesByAuthor.
 		for _, author := range hole.Authors {
 			HolesByAuthor[author] = append(HolesByAuthor[author], hole)
 		}
+	}
 
-		// Populate LatestHoles.
+	// Populate LatestHoles from only the stable hole list.
+	var latestReleased time.Time
+	for _, hole := range HoleList {
 		released := hole.Released.AsTime(time.UTC)
 		if released.After(latestReleased) {
 			LatestHoles = []*Hole{hole}
@@ -225,7 +228,7 @@ func initHoles() {
 		}
 	}
 
-	// Populate NextHoles.
+	// Populate NextHoles from only the experimental hole list.
 	var emptyLocalDate toml.LocalDate
 	for _, hole := range ExpHoleList {
 		if hole.Released != emptyLocalDate {
