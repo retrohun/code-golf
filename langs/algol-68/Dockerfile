@@ -2,9 +2,9 @@ FROM alpine:3.23 AS builder
 
 RUN apk add --no-cache clang curl make patch
 
-ENV LDFLAGS='-static' VER=3.11.3
+ENV LDFLAGS='-static' VER=3.12.0
 
-RUN curl -#L https://jmvdveer.home.xs4all.nl/algol68g-$VER.tar.gz \
+RUN curl -#L https://algol68genie.nl/algol68g-$VER.tar.gz \
   | tar xz --strip-components 1
 
 COPY algol-68.patch /
