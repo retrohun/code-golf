@@ -871,7 +871,7 @@ n*
 
 [Groovy]
 args     = [ '/usr/bin/groovy', '-e', '$code' ]
-env      = [ 'JAVA_HOME=/opt/java' ]
+env      = [ 'JAVA_HOME=/opt/java', 'JAVA_OPTS=-XX:ActiveProcessorCount=1' ]
 released = 2025-08-29
 size     = '65.9 MiB'
 version  = '5.0.5'
