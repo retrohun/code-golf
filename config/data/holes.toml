@@ -4773,7 +4773,6 @@ authors = [
     '0171fa59-629b-738f-8bb5-3c52b6722d5d', # AlephSquirrel
     '018b4d65-bc7e-7862-8289-983baa125555', # albanian-laundromat
 ]
-experiment = 914
 category = 'Sequence'
 links = [
     { name = 'OEIS A001235', url = '//oeis.org/A001235' },
