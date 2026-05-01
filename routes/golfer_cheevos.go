@@ -99,7 +99,7 @@ func golferCheevosGET(w http.ResponseWriter, r *http.Request) {
 	}
 
 	for _, cheevo := range config.CheevoTree["Hole/Lang Specific"] {
-		if len(cheevo.Holes) == 0 || len(cheevo.Langs) == 0 {
+		if len(cheevo.Holes) == 0 && len(cheevo.Langs) == 0 {
 			continue
 		}
 
@@ -110,22 +110,40 @@ func golferCheevosGET(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
+		// Many holes in zero or many langs need different handling.
+		manyHolesNotOneLang := len(cheevo.Holes) > 1 && len(cheevo.Langs) != 1
+
 		var completedSteps []struct{ Hole, Lang string }
 		if err := db.Select(
 			&completedSteps,
-			`SELECT DISTINCT hole, lang
+			`SELECT DISTINCT hole, CASE WHEN $4 THEN '' ELSE lang::text END
 			   FROM stable_passing_solutions
 			  WHERE hole    = ANY($1)
-			    AND lang    = ANY($2)
+			    AND (lang   = ANY($2) OR array_length($2, 1) IS NULL)
 			    AND user_id = $3`,
 			pq.Array(cheevo.Holes),
 			pq.Array(cheevo.Langs),
 			golfer.ID,
+			manyHolesNotOneLang,
 		); err != nil {
 			panic(err)
 		}
 
 		for _, hole := range cheevo.Holes {
+			if manyHolesNotOneLang {
+				step := Step{Name: hole.Name, Path: "/" + hole.ID}
+
+				for _, c := range completedSteps {
+					if c.Hole == hole.ID {
+						step.Complete = true
+						break
+					}
+				}
+
+				progress.Steps = append(progress.Steps, step)
+				continue
+			}
+
 			for _, lang := range cheevo.Langs {
 				step := Step{Path: "/" + hole.ID + "#" + lang.ID}
 

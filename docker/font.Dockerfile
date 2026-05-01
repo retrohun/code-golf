@@ -77,6 +77,7 @@ RUN echo [] > extras/ligatures.json                           \
     '*/1f4c4.svg'            `# Page Facing Up`               \
     '*/1f4c5.svg'            `# Calendar`                     \
     '*/1f4d0.svg'            `# Triangular Ruler`             \
+    '*/1f4d3.svg'            `# Notebook`                     \
     '*/1f4d5.svg'            `# Closed Book`                  \
     '*/1f4da.svg'            `# Books`                        \
     '*/1f4dc.svg'            `# Scroll`                       \
@@ -97,6 +98,7 @@ RUN echo [] > extras/ligatures.json                           \
     '*/1f5a5.svg'            `# Desktop Computer`             \
     '*/1f5d1.svg'            `# Wastebasket`                  \
     '*/1f5dc.svg'            `# Compression`                  \
+    '*/1f5e3.svg'            `# Speaking Head in Silhouette`  \
     '*/1f5f3.svg'            `# Ballot Box with Ballot`       \
     '*/1f600.svg'            `# Grinning Face`                \
     '*/1f602.svg'            `# Face with Tears of Joy`       \
@@ -138,6 +140,7 @@ RUN echo [] > extras/ligatures.json                           \
     '*/1f96a.svg'            `# Sandwich`                     \
     '*/1f970.svg'            `# Smiling Face with Hearts`     \
     '*/1f984.svg'            `# Unicorn`                      \
+    '*/1f988.svg'            `# Shark`                        \
     '*/1f98b.svg'            `# Butterfly`                    \
     '*/1f98e.svg'            `# Lizard`                       \
     '*/1f9a5.svg'            `# Sloth`                        \

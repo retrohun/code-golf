@@ -69,10 +69,11 @@ for $dbh.execute('SELECT id FROM holes WHERE experiment = 0').allrows.flat {
     my $cheevos = %holes{ my $i = ++$ } // '{}';
 
     # Add hole-specific cheevos to the start.
-    $cheevos.=subst: '{', '{smörgåsbord,'       if $_ eq 'catalans-constant';
-    $cheevos.=subst: '{', '{interview-ready,'   if $_ eq 'fizz-buzz';
-    $cheevos.=subst: '{', '{catch-of-the-week,' if $_ eq 'isbn';
-    $cheevos.=subst: '{', '{solve-quine,'       if $_ eq 'quine';
+    $cheevos.=subst: '{', '{smörgåsbord,'              if $_ eq 'catalans-constant';
+    $cheevos.=subst: '{', '{interview-ready,'          if $_ eq 'fizz-buzz';
+    $cheevos.=subst: '{', '{catch-of-the-week,'        if $_ eq 'isbn';
+    $cheevos.=subst: '{', '{solve-quine,'              if $_ eq 'quine';
+    $cheevos.=subst: '{', '{ramanujans-lost-notebook,' if $_ eq 'taxicab-numbers';
     $cheevos.=subst: ',}', '}';
 
     # TODO Add proper datetime mocking/injection so we can test this logic.
@@ -94,6 +95,7 @@ for Q:ww<
     {archivist} isbn 'basic cobol common-lisp'
     {assembly-required} seven-segment assembly
     {bird-is-the-word} levenshtein-distance 'awk prolog sql'
+    {card-sharp} '24-game card-number-validation poker set' c-sharp
     {cobowl} ten-pin-bowling cobol
     {count-to-ten} collatz 'c jq fish perl janet pascal haskell hexagony brainfuck javascript'
     {dammit-janet} rock-paper-scissors-spock-lizard janet
@@ -116,6 +118,7 @@ for Q:ww<
     {pangramglot} pangram-grep 'brainfuck d hexagony javascript nim swift sql zig'
     {ring-toss} tower-of-hanoi 'cobol factor fortran go groovy kotlin ocaml prolog python'
     {s-box-360} rijndael-s-box c-sharp
+    {shout} 'isbn rot13' sql
     {simon-sed} look-and-say sed
     {sinosphere} mahjong 'c j v'
     {sounds-quite-nice} musical-chords 'c c-sharp d'

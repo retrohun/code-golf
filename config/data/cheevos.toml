@@ -137,6 +137,14 @@ emoji       = '☕'
 description = 'Solve any hole in any two of Civet, Java, or JavaScript.'
 
 [['Hole/Lang Specific']]
+name        = 'Card Sharp'
+emoji       = '🦈'
+description = 'Solve <a href=/24-game>24 Game</a>, <a href=/card-number-validation>Card Number Validation</a>, <a href=/poker>Poker</a>, and <a href=/set>Set</a> in C# or F#.'
+holes       = ['24-game', 'card-number-validation', 'poker', 'set']
+langs       = ['c-sharp', 'f-sharp']
+target      = 4
+
+[['Hole/Lang Specific']]
 name        = 'COBOWL'
 emoji       = '🎳'
 description = 'Solve <a href=/ten-pin-bowling#cobol>Ten-pin Bowling in COBOL</a>.'
@@ -275,6 +283,13 @@ emoji       = '🍹'
 description = 'Solve any hole in Berry, Coconut, and Elixir.'
 
 [['Hole/Lang Specific']]
+name        = 'Ramanujan’s Lost Notebook'
+emoji       = '📓'
+description = 'Solve <a href=/partition-numbers>Partition Numbers</a> and <a href=/taxicab-numbers>Taxicab Numbers</a> in any language.'
+holes       = ['partition-numbers', 'taxicab-numbers']
+target      = 2
+
+[['Hole/Lang Specific']]
 name        = 'Ring Toss'
 emoji       = '🛟'
 description = 'Solve <a href=/tower-of-hanoi>Tower of Hanoi</a> in any nine languages containing the letter "O". '
@@ -285,6 +300,14 @@ target      = 9
 name        = 'S-box 360'
 emoji       = '🎮'
 description = 'Solve <a href=/rijndael-s-box>Rijndael S-box</a> in any Microsoft language.'
+
+[['Hole/Lang Specific']]
+name        = 'SHOUT!'
+emoji       = '🗣️'
+description = 'Solve <a href=/isbn>ISBN</a> and <a href=/rot13>ROT13</a> in any of ALGOL 68, AWK, COBOL, PHP, or SQL.'
+holes       = ['isbn', 'rot13']
+langs       = ['algol-68', 'awk', 'cobol', 'php', 'sql']
+target      = 2
 
 [['Hole/Lang Specific']]
 name        = 'Simon Sed'

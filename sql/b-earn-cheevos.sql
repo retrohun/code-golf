@@ -78,6 +78,14 @@ BEGIN
     IF found THEN
         earned := earn(earned, 'caffeinated', user_id); END IF;
 
+    -- 🦈 Card Sharp
+    IF hole IN ('24-game', 'card-number-validation', 'poker', 'set') AND
+        (SELECT COUNT(DISTINCT s.hole) >= 4 FROM stable_passing_solutions s
+          WHERE s.hole IN ('24-game', 'card-number-validation', 'poker', 'set')
+            AND s.lang IN ('c-sharp', 'f-sharp')
+            AND s.user_id = user_id) THEN
+        earned := earn(earned, 'card-sharp', user_id); END IF;
+
     -- 🎳 COBOWL
     IF hole = 'ten-pin-bowling' AND lang = 'cobol' THEN
         earned := earn(earned, 'cobowl', user_id); END IF;
@@ -182,6 +190,13 @@ BEGIN
     IF langs_for_hole @> '{berry,coconut,elixir}' THEN
         earned := earn(earned, 'piña-colada', user_id); END IF;
 
+    -- 📓 Ramanujan’s Lost Notebook
+    IF hole IN ('partition-numbers', 'taxicab-numbers') AND
+        (SELECT COUNT(DISTINCT s.hole) >= 2 FROM stable_passing_solutions s
+          WHERE s.hole IN ('partition-numbers', 'taxicab-numbers')
+            AND s.user_id = user_id) THEN
+        earned := earn(earned, 'ramanujans-lost-notebook', user_id); END IF;
+
     -- 🛟 Ring Toss
     SELECT COUNT(*) >= 9 INTO found FROM UNNEST(langs_for_hole)
      WHERE unnest IN (SELECT id FROM langs WHERE experiment = 0 AND name LIKE '%O%');
@@ -191,6 +206,14 @@ BEGIN
     -- 🎮 S-box 360
     IF hole = 'rijndael-s-box' AND lang IN ('c-sharp', 'f-sharp', 'powershell') THEN
         earned := earn(earned, 's-box-360', user_id); END IF;
+
+    -- 🗣️ SHOUT!
+    IF hole IN ('isbn', 'rot13') AND
+        (SELECT COUNT(DISTINCT s.hole) >= 2 FROM stable_passing_solutions s
+          WHERE s.hole IN ('isbn', 'rot13')
+            AND s.lang IN ('algol-68', 'awk', 'cobol', 'php', 'sql')
+            AND s.user_id = user_id) THEN
+        earned := earn(earned, 'shout', user_id); END IF;
 
     -- 💬 Simon Sed
     IF hole = 'look-and-say' AND lang = 'sed' THEN

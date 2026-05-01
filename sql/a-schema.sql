@@ -4,7 +4,7 @@ CREATE TYPE cheevo AS ENUM (
     '0xdead', '8-bit-wonder', 'aged-like-fine-wine', 'alchemist',
     'alphabet-soup', 'archivist', 'assembly-required', 'bakers-dozen',
     'big-brother', 'biohazard', 'bird-is-the-word', 'black-box-testing',
-    'blackjack', 'bullseye', 'busy-beaver', 'caffeinated',
+    'blackjack', 'bullseye', 'busy-beaver', 'caffeinated', 'card-sharp',
     'catch-of-the-week', 'centenarian', 'cobowl', 'count-to-ten',
     'cunning-linguist', 'dammit-janet', 'different-strokes',
     'disappearing-act', 'dont-panic', 'double-slit-experiment',
@@ -23,14 +23,14 @@ CREATE TYPE cheevo AS ENUM (
     'omniglot', 'omniglutton', 'once-in-a-blue-moon', 'ouroboros',
     'out-of-spec', 'overflowing', 'pangramglot', 'patches-welcome',
     'phileas-fogg', 'pi-day', 'piña-colada', 'polyglot', 'polyglutton',
-    'prime-time', 'real-programmers', 'right-on', 'ring-toss', 'rm-rf',
-    'rtfm', 'rule-34', 's-box-360', 'simon-sed', 'sinosphere', 'slowcoach',
-    'smörgåsbord', 'solve-quine', 'sounds-quite-nice', 'takeout',
-    'texnical-know-how', 'the-pen-is-mightier', 'the-watering-hole',
-    'tim-toady', 'tl-dr', 'turn-over-a-new-leaf', 'twelvetide',
-    'twenty-kiloleagues', 'typesetter', 'under-pressure', 'up-to-eleven',
-    'vampire-byte', 'watt-are-you-doing', 'when-in-rome', 'x-factor', 'x86',
-    'zoodiac-signs'
+    'prime-time', 'ramanujans-lost-notebook', 'real-programmers', 'right-on',
+    'ring-toss', 'rm-rf', 'rtfm', 'rule-34', 's-box-360', 'shout',
+    'simon-sed', 'sinosphere', 'slowcoach', 'smörgåsbord', 'solve-quine',
+    'sounds-quite-nice', 'takeout', 'texnical-know-how',
+    'the-pen-is-mightier', 'the-watering-hole', 'tim-toady', 'tl-dr',
+    'turn-over-a-new-leaf', 'twelvetide', 'twenty-kiloleagues', 'typesetter',
+    'under-pressure', 'up-to-eleven', 'vampire-byte', 'watt-are-you-doing',
+    'when-in-rome', 'x-factor', 'x86', 'zoodiac-signs'
 );
 
 CREATE TYPE connection AS ENUM (
